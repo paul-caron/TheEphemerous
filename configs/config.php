@@ -1,4 +1,4 @@
 <?php
-$dbFile = "ephemerous.db";
+$dbFile = "/ephemerous.db";
 
 ?>
