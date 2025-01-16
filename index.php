@@ -35,6 +35,7 @@ $latestMessage = $ephemerousDb->get();
             padding: 15px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-top: 20px;
+            word-wrap: break-word;
         }
         .form-box {
             background-color: #fff;
@@ -49,6 +50,8 @@ $latestMessage = $ephemerousDb->get();
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 4px;
+            box-sizing: border-box;
+            max-width:100%;
         }
         button {
             background-color: #4CAF50;
@@ -70,14 +73,15 @@ $latestMessage = $ephemerousDb->get();
     <!-- Display the latest message -->
     <div class="message-box">
         <strong>Latest Message:</strong><br>
-        <?php echo htmlspecialchars($latestMessage); ?>
+        <p><?php echo htmlspecialchars($latestMessage); ?>
+        </p>
     </div>
 
     <!-- Form to create a new message -->
     <div class="form-box">
         <h3>Create a New Message</h3>
         <form method="post" action="">
-            <textarea name="message" rows="4" placeholder="Enter your message here" required></textarea><br>
+            <textarea name="message" rows="4" maxlength="255" placeholder="Enter your message here" required></textarea><br>
             <button type="submit">Submit</button>
         </form>
     </div>
